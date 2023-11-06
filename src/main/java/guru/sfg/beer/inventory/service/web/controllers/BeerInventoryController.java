@@ -13,12 +13,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RequiredArgsConstructor
 @RestController
 public class BeerInventoryController {
 
   private final BeerInventoryRepository beerInventoryRepository;
   private final BeerInventoryMapper beerInventoryMapper;
+
+  public BeerInventoryController(BeerInventoryRepository beerInventoryRepository,
+      BeerInventoryMapper beerInventoryMapper) {
+    this.beerInventoryRepository = beerInventoryRepository;
+    this.beerInventoryMapper = beerInventoryMapper;
+  }
 
   @GetMapping("api/v1/beer/{beerId}/inventory")
   List<BeerInventoryDto> listBeersById(@PathVariable UUID beerId) {
