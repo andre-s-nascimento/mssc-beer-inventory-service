@@ -16,6 +16,7 @@
  */
 package guru.sfg.beer.inventory.service.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -44,7 +45,7 @@ public class BeerInventory extends BaseEntity {
     this.upc = upc;
     this.quantityOnHand = quantityOnHand;
   }
-
+  @Column(length = 36, columnDefinition = "uuid", updatable = false, nullable = false)
   private UUID beerId;
   private String upc;
   private Integer quantityOnHand = 0;

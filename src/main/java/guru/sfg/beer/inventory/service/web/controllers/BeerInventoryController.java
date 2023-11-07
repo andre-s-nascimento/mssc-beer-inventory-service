@@ -19,8 +19,8 @@ public class BeerInventoryController {
   private final BeerInventoryRepository beerInventoryRepository;
   private final BeerInventoryMapper beerInventoryMapper;
 
-  public BeerInventoryController(BeerInventoryRepository beerInventoryRepository,
-      BeerInventoryMapper beerInventoryMapper) {
+  public BeerInventoryController(
+      BeerInventoryRepository beerInventoryRepository, BeerInventoryMapper beerInventoryMapper) {
     this.beerInventoryRepository = beerInventoryRepository;
     this.beerInventoryMapper = beerInventoryMapper;
   }
@@ -31,6 +31,6 @@ public class BeerInventoryController {
 
     return beerInventoryRepository.findAllByBeerId(beerId).stream()
         .map(beerInventoryMapper::beerInventoryToBeerInventoryDto)
-        .collect(Collectors.toList());
+        .toList();
   }
 }
