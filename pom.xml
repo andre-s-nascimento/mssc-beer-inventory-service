@@ -15,11 +15,4 @@
   <name>mssc-beer-inventory-service</name>
   <description>Udemy Course - MSSC Beer Inventory Service</description>
 
-  <repositories>
-    <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
-    </repository>
-  </repositories>
-
 </project>
